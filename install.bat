@@ -1,7 +1,7 @@
 @ECHO OFF
 net session > nul 2>&1
 if %errorLevel% equ 1(
-  echo CreateObject^("Shell.Application"^).ShellExecute "%~2", "", "", "runas", 10 > "%temp%\uacPrompt.vbs"
+  echo CreateObject^("Shell.Application"^).ShellExecute "cmd.exe /c %~0", "", "", "runas", 10 > "%temp%\uacPrompt.vbs"
   "%temp%\uacPrompt.vbs"
   del "%temp%\uacPrompt.vbs"
 )
@@ -12,12 +12,13 @@ for %%i in(0 1 2) do(
   if %points% equ 0(
      cls
      echo Ajout des valeurs sur le registre.
-     reg add HKLM
+     reg add HKCR\exefile\shell\game_booster
   )
 
   if %points% equ 1(
      cls
      echo Ajout des valeurs sur le registre..
+     reg add HKCR\exefile\shell\game_booster /v @ /t REG_SZ /d "Open with Game Booster"
   )
 
   if %points% equ 2(

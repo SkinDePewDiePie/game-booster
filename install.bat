@@ -16,9 +16,15 @@ for %%i in(0 1 2) do(
   if %points% equ 0(
     cls
     echo Ajout des valeurs sur le registre.
+
     reg add HKCR\exefile\shell\game_booster
     reg add HKCR\exefile\shell\game_booster /v @ /t REG_SZ /d "Open with Game Booster"
     reg add HKCR\exefile\shell\game_booster /v Icon /t REG_SZ /d "%path%\icon.ico"
+
+    reg add HKCR\exefile\shell\game_booster_admin
+    reg add HKCR\exefile\shell\game_booster_admin /v @ /t REG_SZ /d "Open with Game Booster (admin)"
+    reg add HKCR\exefile\shell\game_booster_admin /v HasLuaShield /t REG_SZ /d ""
+    reg add HKCR\exefile\shell\game_booster_admin /v Icon /t REG_SZ /d "%path%\icon.ico"
   )
 
   if %points% equ 1(

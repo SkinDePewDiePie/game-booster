@@ -55,7 +55,11 @@ exit
 echo WGET for Windows
 echo.
 echo Command format:
-echo %~n0 [37m^[url^][0m [37m^[file^][0m
+echo %~n0 [url] [file]
+
+
+
+
 echo.
 echo - url: For wgetting a file on t he World-Wide Web.
 echo - file: For saving the wgetted file with a name.

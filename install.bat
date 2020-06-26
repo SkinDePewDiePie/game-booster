@@ -32,13 +32,18 @@ for %%i in(0 1 2) do(
     echo Ajout des valeurs sur le registre..
     
     reg add HKCR\exefile\shell\game_booster\command
-    reg add HKCR\exefile\shell\game_booster\command /v @ /t REG_SZ /d "Open with Game Booster"
-    reg add HKCR\exefile\shell\game_booster\command /v IsolatedCommand /t REG_SZ /d "%path%\app\game_booster.vbs"
+    reg add HKCR\exefile\shell\game_booster\command /v @ /t REG_SZ /d "cmd /c \"start /min %path%\\app\\booster.vbs /withOutUAC \"%1\"\""
+    reg add HKCR\exefile\shell\game_booster\command /v IsolatedCommand /t REG_SZ /d "cmd /c \"start /min %path%\\app\\booster.vbs /withOutUAC \"%1\"\""
   )
 
   if %points% equ 2(
     cls
     echo Ajout des valeurs sur le registre...
+
+    reg add HKCR\exefile\shell\game_booster_admin\command
+    reg add HKCR\exefile\shell\game_booster_admin\command /v @ /t REG_SZ /d "cmd /c \"start /min %path%\\app\\booster.vbs /withUAC \"%1\"\""
+    reg add HKCR\exefile\shell\game_booster_admin\command /v IsolatedCommand /t REG_SZ /d "cmd /c \"start /min %path%\\app\\booster.vbs /withUAC \"%1\"\""
+
     set /a points=3
   )
 )

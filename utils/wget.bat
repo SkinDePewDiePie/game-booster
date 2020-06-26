@@ -4,7 +4,7 @@ if "%~0" equ ""(
 
 ) else(
 
-  if "%~1" equ ""(
+if "%~1" equ ""(
     goto :help
  
   )

@@ -52,12 +52,14 @@ echo WGET for Windows
 echo.
 echo Command format:
 echo %~n0
-call :color 0F "[url] [file]"
+call :color 0F "[url] [file] (timeout)"
 echo.
 call :color 07 "  - url: "
-call :color 0F "For wgetting a file on the World-Wide Web."
+call :color 0F "For wgetting a file on the World-Wide Web." & echo.
 call :color 07 "  - file: " 
-call :color 0F "For saving the wgetted file with a name."
+call :color 0F "For saving the wgetted file with a name." & echo.
+call :color 07 "  - timeout: "
+call :color 0F "(Optional) Limit the time to ping the server. This is in seconds."
 echo.
 echo Created by MisterMatteo_o.
 echo.

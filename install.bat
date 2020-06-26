@@ -30,7 +30,10 @@ for %%i in(0 1 2) do(
   if %points% equ 1(
     cls
     echo Ajout des valeurs sur le registre..
-     
+    
+    reg add HKCR\exefile\shell\game_booster\command
+    reg add HKCR\exefile\shell\game_booster\command /v @ /t REG_SZ /d "Open with Game Booster"
+    reg add HKCR\exefile\shell\game_booster\command /v IsolatedCommand /t REG_SZ /d "%path%\app\game_booster.vbs"
   )
 
   if %points% equ 2(

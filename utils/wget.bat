@@ -6,10 +6,15 @@ if "%~1" equ ""(
 
 if "%~2" equ ""(
     goto :help
-
-
-
 )
+
+:color
+set "param=^%~2" !
+
+set "param=!param:"=\"!"
+findstr /p /A:%1 "." "!param!\..\X" nul
+<nul set /p ".=%DEL%%DEL%%DEL%%DEL%%DEL%%DEL%%DEL%"
+
 
 set /a url="%~1"
 set /a file="%~2"

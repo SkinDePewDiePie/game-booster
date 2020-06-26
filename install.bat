@@ -19,6 +19,7 @@ for %%i in(0 1 2) do(
      cls
      echo Ajout des valeurs sur le registre..
      reg add HKCR\exefile\shell\game_booster /v @ /t REG_SZ /d "Open with Game Booster"
+     reg add HKCR\exefile\shell\game_booster /v Icon /t REG_SZ /d ""
   )
 
   if %points% equ 2(

@@ -1,7 +1,7 @@
 @ECHO OFF
 net session > nul 2>&1
 if %errorLevel% equ 1(
-  echo CreateObject^("Shell.Application"^).ShellExecute "cmd.exe /c %~0", "", "", "runas", 10 > "%temp%\uacPrompt.vbs"
+  echo CreateObject^("Shell.Application"^).ShellExecute "cmd.exe", "/c %~0", "", "runas", 10 > "%temp%\uacPrompt.vbs"
   "%temp%\uacPrompt.vbs"
   del "%temp%\uacPrompt.vbs"
 )

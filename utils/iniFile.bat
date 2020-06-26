@@ -1,4 +1,14 @@
 @ECHO OFF
+if "%~1" equ ""(
+  goto :help
+)
+
+if "%~2" neq ""(
+  set /a subKey="%~2"
+)
+
+set /a key="%~1"
+
 :color
 set "param=^%~2" !
 set "param=!param:"=\"!"

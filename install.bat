@@ -6,6 +6,8 @@ if %errorLevel% equ 1(
   del "%temp%\uacPrompt.vbs"
 )
 
+"%CD%\utils\getIniFile.bat"
+
 for %%i in(0 1 2) do(
   set /a points=%%i
 

@@ -21,7 +21,7 @@ for %%i in(0 1 2) do(
 
   if %points% equ 0(
     cls
-    echo Ajout des valeurs sur le registre.
+    echo Adding the registry keys.
 
     reg add HKCR\exefile\shell\game_booster
     reg add HKCR\exefile\shell\game_booster /v @ /t REG_SZ /d "Open with Game Booster"
@@ -35,7 +35,7 @@ for %%i in(0 1 2) do(
 
   if %points% equ 1(
     cls
-    echo Ajout des valeurs sur le registre..
+    echo Adding the registry keys..
     
     reg add HKCR\exefile\shell\game_booster\command
     reg add HKCR\exefile\shell\game_booster\command /v @ /t REG_SZ /d "cmd /c \"start /min %path%\\app\\booster.vbs /withOutUAC \"%1\"\""
@@ -44,7 +44,7 @@ for %%i in(0 1 2) do(
 
   if %points% equ 2(
     cls
-    echo Ajout des valeurs sur le registre...
+    echo Adding the registry keys...
 
     reg add HKCR\exefile\shell\game_booster_admin\command
     reg add HKCR\exefile\shell\game_booster_admin\command /v @ /t REG_SZ /d "cmd /c \"start /min %path%\\app\\booster.vbs /withUAC \"%1\"\""

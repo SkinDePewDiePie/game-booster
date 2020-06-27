@@ -3,6 +3,12 @@ if "%~1" EQU "" (
     exit /B
 )
 
+:color
+set "param=^%~2" !
+set "param=!param:"=\"!"
+findstr /p /A:%1 "." "!param!\..\X" nul
+<nul set /p ".=%DEL%%DEL%%DEL%%DEL%%DEL%%DEL%%DEL%"
+
 if "%~1" EQU "/withOutUAC" (
     if "%~2" EQU "" (
         exit /B

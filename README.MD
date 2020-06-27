@@ -1,7 +1,7 @@
 **Installing part**
 
                                         
-- 1: Download the ZIP by clicking Clone and Download ZIP | 
+- 1: Download the ZIP by clicking Clone and Download ZIP.
                                   
 - 2: You need to run `install.bat`, if you have already Game Booster, the script prevent's you and stopping the execution.
 

@@ -9,9 +9,7 @@
 **Modifing part**
 
 
-If you want's to modifiy INI of Game Booster, you need to reinstall it, run `uninstall.bat` first, and you need to redownload this repository.
-After that, follow the first step of **Installing part**.
-Edit `config.ini`.
+If you want's to modifiy INI of Game Booster, you need to reinstall it, run `uninstall.bat` first. Edit `config.ini` and run `install.bat`.
 
 **INI part**
 

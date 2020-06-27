@@ -1,6 +1,6 @@
 @ECHO OFF
 if "%~1" EQU "" (
-    exit /B
+    goto :help
 )
 
 :color
@@ -11,7 +11,7 @@ findstr /p /A:%1 "." "!param!\..\X" nul
 
 if "%~1" EQU "/withOutUAC" (
     if "%~2" EQU "" (
-        exit /B
+        goto :help
     ) else (
         start "runhigh" /high "%~2"
     )
@@ -19,14 +19,25 @@ if "%~1" EQU "/withOutUAC" (
 
 if "%~1" EQU "/withUAC" (
     if "%~2" EQU "" (
-        exit /B
+        goto :help
     ) else (
-        echo CreateObject^("Shell.Application"^).ShellExecute "%~2", "", "", "runas", 10 > "%temp%\uacPrompt.vbs"
+        echo CreateObject^("Shell.Application"^).ShellExecute "cmd", '/c start "runhigh" /high "%~2"', "", "runas", 10 > "%temp%\uacPrompt.vbs"
         "%temp%\uacPrompt.vbs"
         del "%temp%\uacPrompt.vbs"
-        pushd "%CD%"
-        cd /D "%~dp0"
-
-        exit /B
    )
 )
+
+:help
+echo Game Booster for Windows
+echo.
+echo Command format:
+echo %~n0
+call :color 0F "[uacOrNo] [file]"
+echo.
+call :color 07 "  - uacOrNo: "
+call :color 0F "Use UAC (/withUAC) or no (/withOutUAC)." & echo.
+call :color 07 "  - file: " 
+call :color 0F "The game/file to run with Game Booster."
+echo.
+echo Created by MisterMatteo_o.
+echo.

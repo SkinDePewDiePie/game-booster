@@ -28,6 +28,6 @@ echo Created by MisterMatteo_o.
 echo.
 
 :main
-for /F "tokens=1,2" %%a in (%2) do (
+for /F "tokens=1,2 delims==" %%a in (%2) do (
   echo %%a | findstr %1
 )

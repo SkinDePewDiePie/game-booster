@@ -29,5 +29,7 @@ echo.
 
 :main
 for /F "tokens=1,2 delims==" %%a in (%2) do (
-  echo %%a | findstr %1
+  if "%%b" neq "" (
+    echo %%b
+  )
 )
